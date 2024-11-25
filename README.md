@@ -1,17 +1,17 @@
-#xmlseclibs 
+# xmlseclibs 
 
 xmlseclibs is a library written in PHP for working with XML Encryption and Signatures.
 
 The author of xmlseclibs is Rob Richards.
 
-# Branches
+## Branches
 Master is currently the only actively maintained branch.
 * master/3.1: Added AES-GCM support requiring 7.1+
 * 3.0: Removes mcrypt usage requiring 5.4+ (5.6.24+ recommended for security reasons)
 * 2.0: Contains namespace support requiring 5.3+
 * 1.4: Contains auto-loader support while also maintaining backwards compatiblity with the older 1.3 version using the xmlseclibs.php file. Supports PHP 5.2+
 
-# Requirements
+## Requirements
 
 xmlseclibs requires PHP version 5.4 or greater. **5.6.24+ recommended for security reasons**
 
@@ -53,11 +53,11 @@ $objDSig->setCanonicalMethod(XMLSecurityDSig::EXC_C14N);
 $objDSig->addReference(
     $doc, 
     XMLSecurityDSig::SHA256, 
-    array('http://www.w3.org/2000/09/xmldsig#enveloped-signature')
+    ['http://www.w3.org/2000/09/xmldsig#enveloped-signature']
 );
 
 // Create a new (private) Security key
-$objKey = new XMLSecurityKey(XMLSecurityKey::RSA_SHA256, array('type'=>'private'));
+$objKey = new XMLSecurityKey(XMLSecurityKey::RSA_SHA256, ['type'=>'private']);
 /*
 If key has a passphrase, set it using
 $objKey->passphrase = '<passphrase>';
